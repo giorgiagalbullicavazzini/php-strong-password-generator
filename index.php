@@ -1,3 +1,20 @@
+<?php
+    // Check if the password is valid
+    function checkPassword ($password) {
+        // Password transformation into an integer without white spaces
+        $password_length = str_replace(' ', '', $password);
+        $password_length = intval($password_length);
+
+        if ($password_length == 0) {
+            return "Inserisci un numero!";
+        } elseif ($password_length < 8) {
+            return "La password deve contenere almeno 8 caratteri.";
+        } else {
+            return "La tua password è lunga $password_length caratteri.";
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +36,7 @@
 
     <!-- Password generator -->
     <div class="password">
-        <?php echo $_GET["password-length"] ?>
+        <?php echo checkPassword($_GET["password-length"]) ?>
     </div>
     <!-- // Password generator -->
 </body>

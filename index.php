@@ -1,8 +1,10 @@
 <?php
     require_once __DIR__ . '/functions.php';
 
+    // Check if password length is valid
     $password_secure = checkPassword($_GET["password-length"]);
 
+    // If password length is valid, generate password and redirect
     session_start();
     if ($password_secure == "La tua password verrà generata a momenti...") {
         $format_password = $_GET["password-length"];

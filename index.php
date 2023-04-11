@@ -6,7 +6,7 @@
 
     // If password length is valid, generate password and redirect
     session_start();
-    if ($password_secure == "La tua password verrà generata a momenti...") {
+    if ($password_secure == 1) {
         $format_password = $_GET["password-length"];
         $format_password = str_replace(' ', '', $format_password);
         $format_password = intval($format_password);

@@ -12,8 +12,7 @@
         } elseif ($password_length > 32) {
             return "La password può contenere al massimo 32 caratteri.";
         } else {
-            $generated_password = generatePassword($password_length);
-            return "La tua password è: $generated_password";
+            header ('Location: ./password.php');
         }
     }
 

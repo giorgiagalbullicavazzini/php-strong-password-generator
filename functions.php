@@ -12,7 +12,7 @@
         } elseif ($password_length > 32) {
             return "La password può contenere al massimo 32 caratteri.";
         } else {
-            header ('Location: ./password.php');
+            return "La tua password verrà generata a momenti...";
         }
     }
 

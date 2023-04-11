@@ -1,5 +1,16 @@
 <?php
     require_once __DIR__ . '/functions.php';
+
+    $password_secure = checkPassword($_GET["password-length"]);
+
+    session_start();
+    if ($password_secure == "La tua password verrà generata a momenti...") {
+        $format_password = $_GET["password-length"];
+        $format_password = str_replace(' ', '', $format_password);
+        $format_password = intval($format_password);
+
+        $_SESSION = generatePassword($format_password);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +34,7 @@
 
     <!-- Password generator -->
     <div class="password">
-        <?php echo checkPassword($_GET["password-length"]) ?>
+        <?php echo $password_secure ?>
     </div>
     <!-- // Password generator -->
 </body>

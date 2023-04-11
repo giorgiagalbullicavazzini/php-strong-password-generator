@@ -1,7 +1,7 @@
 <?php
-    // Check if the password is valid
+    // Check if the password length is valid
     function checkPassword ($password) {
-        // Password transformation into an integer without white spaces
+        // Password length transformation into an integer without white spaces
         $password_length = str_replace(' ', '', $password);
         $password_length = intval($password_length);
 

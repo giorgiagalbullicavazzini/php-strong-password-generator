@@ -10,7 +10,8 @@
         } elseif ($password_length < 8) {
             return "La password deve contenere almeno 8 caratteri.";
         } else {
-            return "La tua password è lunga $password_length caratteri.";
+            $generated_password = generatePassword($password_length);
+            return "La tua password è: $generated_password";
         }
     }
 
@@ -90,8 +91,6 @@
     <!-- Password generator -->
     <div class="password">
         <?php echo checkPassword($_GET["password-length"]) ?>
-        <br>
-        <?php echo generatePassword($_GET["password-length"]) ?>
     </div>
     <!-- // Password generator -->
 </body>

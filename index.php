@@ -9,7 +9,8 @@
         $format_password = str_replace(' ', '', $format_password);
         $format_password = intval($format_password);
 
-        $_SESSION = generatePassword($format_password);
+        $_SESSION['password'] = generatePassword($format_password);
+        header ('Location: ./password.php');
     }
 ?>
 

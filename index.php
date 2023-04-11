@@ -9,7 +9,19 @@
 </head>
 
 <body>
-    
+    <!-- Choose password length -->
+    <form action="index.php" method="get">
+        <label for="password-length">Lunghezza della password:</label>
+        <input type="text" name="password-length" id="password-length">
+        <button>Invia</button>
+    </form>
+    <!-- // Choose password length -->
+
+    <!-- Password generator -->
+    <div class="password">
+        <?php echo $_GET["password-length"] ?>
+    </div>
+    <!-- // Password generator -->
 </body>
 
 </html>
